@@ -14,7 +14,6 @@ const contactsSlice = createSlice({
       state.contactList.push({ name, number, id });
     },
     deleteContact(state, { payload }) {
-      console.log('Deleting contact with ID:', payload);
       const index = state.contactList.findIndex(
         contact => contact.id === payload
       );

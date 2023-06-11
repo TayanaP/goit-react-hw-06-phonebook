@@ -19,9 +19,6 @@ export const ContactForm = () => {
     const name = e.target.elements.name.value;
     const number = e.target.elements.number.value;
 
-    console.log('Name:', name);
-    console.log('Number:', number);
-
     const inContacts = contacts.some(
       contact =>
         contact.name.toLowerCase() === name.toLowerCase() ||
@@ -32,9 +29,6 @@ export const ContactForm = () => {
       alert(`${name} is already in contacts`);
       return;
     }
-
-    console.log('Contacts:', contacts);
-
     dispatch(addContact({ name, number, id: nanoid() }));
     form.reset();
   };
